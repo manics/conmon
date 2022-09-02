@@ -20,7 +20,6 @@
 #ifdef USE_SECCOMP
 
 #include <sys/sysmacros.h>
-#include <linux/seccomp.h>
 #include <seccomp.h>
 
 #include "seccomp_notify.h"

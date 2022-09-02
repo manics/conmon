@@ -12,6 +12,11 @@
 #include <sys/event.h>
 #endif
 
+/* NB: PR_{SET,GET}_CHILD_SUBREAPER were introduced in Linux 3.4 and are not available on CentOS 6. */
+#ifndef PR_SET_CHILD_SUBREAPER
+#define PR_SET_CHILD_SUBREAPER 36
+#endif
+
 log_level_t log_level = WARN_LEVEL;
 char *log_cid = NULL;
 gboolean use_syslog = FALSE;

@@ -14,6 +14,11 @@
 #include <sys/un.h>
 #include <sys/stat.h>
 
+/* NB: O_PATH was introduced in Linux 2.6.39 and is not available on CentOS 6. */
+#if !defined(O_PATH)
+#define O_PATH 010000000
+#endif
+
 static gboolean attach_cb(int fd, G_GNUC_UNUSED GIOCondition condition, gpointer user_data);
 static gboolean remote_sock_cb(int fd, GIOCondition condition, gpointer user_data);
 static void init_remote_sock(struct remote_sock_s *sock, struct remote_sock_s *src);

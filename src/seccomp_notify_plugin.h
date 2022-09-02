@@ -2,7 +2,7 @@
 
 #ifdef USE_SECCOMP
 
-#include <linux/seccomp.h>
+#include <seccomp.h>
 
 struct seccomp_notify_conf_s {
 	const char *runtime_root_path;
